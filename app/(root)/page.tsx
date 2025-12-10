@@ -1,15 +1,16 @@
 import React from 'react'
-import Hello from '../../components/hello'
-import Home from '@/components/Home'
+// import Hello from '../../components/hello'
+// import Home from '@/components/Home'
 
-const page = () => {
+const Page = () => {
   console.log('i am a server')
   return (
     <div>
-      <Hello />
-      <Home />
+      <h1>Welcome to Next</h1>
+      {/* <Hello /> */}
+      {/* <Home /> */}
     </div>
   )
 }
 
-export default page
+export default Page
