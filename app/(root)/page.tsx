@@ -3,13 +3,14 @@ import ExploreButton from '@/components/ExploreButton'
 import React from 'react'
 // import Hello from '../../components/hello'
 // import Home from '@/components/Home'
+import events from '@/lib/constants'
 
 const Page = () => {
   console.log('i am a server')
-  const events = [
-    {image: '/images/event1.png', title: 'Event 1'},
-    {image: '/images/event2.png', title: 'Event 2'},
-  ]
+  // const events = [
+  //   {image: '/images/event1.png', title: 'Event 1'},
+  //   {image: '/images/event2.png', title: 'Event 2'},
+  // ]
   return (
     <section className="mt-20 p-8">
       <h1 className='text-center'>The Hub for every party lover <br /> Find events You Don't want to Miss</h1>
@@ -23,7 +24,7 @@ const Page = () => {
 
         <ul className='events'>
           {events.map((event) => (
-            <li key={event.title}>
+            <li className="list-none" key={event.title}>
                 <EventCard {...event}/>
             </li>
           ))}
