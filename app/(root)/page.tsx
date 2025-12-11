@@ -1,3 +1,4 @@
+import EventCard from '@/components/EventCard'
 import ExploreButton from '@/components/ExploreButton'
 import React from 'react'
 // import Hello from '../../components/hello'
@@ -5,6 +6,10 @@ import React from 'react'
 
 const Page = () => {
   console.log('i am a server')
+  const events = [
+    {image: '/images/event1.png', title: 'Event 1'},
+    {image: '/images/event2.png', title: 'Event 2'},
+  ]
   return (
     <section className="mt-20 p-8">
       <h1 className='text-center'>The Hub for every party lover <br /> Find events You Don't want to Miss</h1>
@@ -17,8 +22,10 @@ const Page = () => {
         <h3>Featured Events</h3>
 
         <ul className='events'>
-          {[1,2,3,4,5].map((event) => (
-            <li key={event}>Event {event}</li>
+          {events.map((event) => (
+            <li key={event.title}>
+                <EventCard {...event}/>
+            </li>
           ))}
         </ul>
       </div>
