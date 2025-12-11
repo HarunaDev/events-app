@@ -5,11 +5,11 @@ import React from 'react'
 const Page = () => {
   console.log('i am a server')
   return (
-    <div>
-      <h1>Welcome to Next</h1>
-      {/* <Hello /> */}
-      {/* <Home /> */}
-    </div>
+    <section className="mt-20">
+      <h1 className='text-center'>The Hub for every party lover <br /> Find events You Don't want to Miss</h1>
+
+      <p className='text-center mt-5'>Rave, Events, and Socials. All in one place</p>
+    </section>
   )
 }
 
