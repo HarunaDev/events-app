@@ -6,6 +6,7 @@ import Image from "next/image";
 import BookEvent from "@/components/BookEvent";
 import EventCard from "@/components/EventCard";
 import { cacheLife } from "next/cache";
+import { getSimilarEventsBySlug } from "@/lib/actions/event.actions";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -98,7 +99,7 @@ const EventDetails = async ({
 
   const bookings = 10;
 
-  // const similarEvents: IEvent[] = await getSimilarEventsBySlug(slug);
+  const similarEvents: IEvent[] = await getSimilarEventsBySlug(slug);
 
   return (
     <section id="event">
@@ -141,14 +142,14 @@ const EventDetails = async ({
             />
           </section>
 
-          <EventAgenda agendaItems={JSON.parse(agenda)} />
+          <EventAgenda agendaItems={agenda} />
 
           <section className="flex-col-gap-2">
             <h2>About the Organizer</h2>
             <p>{organizer}</p>
           </section>
 
-          <EventTags tags={JSON.parse(tags)} />
+          <EventTags tags={tags} />
         </div>
 
         {/*    Right Side - Booking Form */}
@@ -168,7 +169,7 @@ const EventDetails = async ({
         </aside>
       </div>
 
-      {/* <div className="flex w-full flex-col gap-4 pt-20">
+      <div className="flex w-full flex-col gap-4 pt-20">
         <h2>Similar Events</h2>
         <div className="events">
           {similarEvents.length > 0 &&
@@ -176,7 +177,7 @@ const EventDetails = async ({
               <EventCard key={similarEvent.title} {...similarEvent} />
             ))}
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
