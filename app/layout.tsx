@@ -44,7 +44,9 @@ export default function RootLayout({
     className="custom-rays"
   />
 </div>
+        <main>
         {children}
+        </main>
       </body>
     </html>
   );
