@@ -1,6 +1,7 @@
 import EventCard from '@/components/EventCard'
 import ExploreButton from '@/components/ExploreButton'
 import { IEvent } from '@/database';
+import { cacheLife } from 'next/cache';
 import React from 'react'
 // import Hello from '../../components/hello'
 // import Home from '@/components/Home'
@@ -9,9 +10,11 @@ import React from 'react'
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Page = async () => {
+  'use cache';
+  cacheLife('hours')
   const response = await fetch(`${BASE_URL}/api/events`);
   const { events } = await response.json()
-  console.log('i am a server')
+  // console.log('i am a server')
   // const events = [
   //   {image: '/images/event1.png', title: 'Event 1'},
   //   {image: '/images/event2.png', title: 'Event 2'},
