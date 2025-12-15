@@ -21,7 +21,7 @@ const Page = async () => {
   // ]
   return (
     <section className="mt-20 p-8">
-      <h1 className='text-center'>The Hub for every party lover <br /> Find events You Don't want to Miss</h1>
+      <h1 className='text-center'>The Hub for every party lover <br /> Find events You Don't want to Miss.</h1>
 
       <p className='text-center mt-5'>Rave, Events, and Socials. All in one place</p>
 
