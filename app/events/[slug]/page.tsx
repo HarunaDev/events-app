@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import { IEvent } from "@/database";
 // import { getSimilarEventsBySlug } from "@/lib/actions/event.actions";
 import Image from "next/image";
@@ -102,7 +102,9 @@ const EventDetails = async ({
   const similarEvents: IEvent[] = await getSimilarEventsBySlug(slug);
 
   return (
-    <section id="event">
+    <main>
+      <Suspense fallback={<div>Loading...</div>}>
+      <section id="event">
       <div className="header">
         <h1>Event Description</h1>
         <p className="mt-2">{description}</p>
@@ -179,6 +181,9 @@ const EventDetails = async ({
         </div>
       </div>
     </section>
+      </Suspense>
+    </main>
+    
   );
 };
 
