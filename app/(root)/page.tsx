@@ -5,15 +5,15 @@ import { cacheLife } from 'next/cache';
 import React from 'react'
 // import Hello from '../../components/hello'
 // import Home from '@/components/Home'
-import events from '@/lib/constants'
+// import events from '@/lib/constants'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Page = async () => {
   'use cache';
   cacheLife('hours')
-  // const response = await fetch(`${BASE_URL}/api/events`);
-  // const { events } = await response.json()
+  const response = await fetch(`${BASE_URL}/api/events`);
+  const { events } = await response.json()
   // console.log('i am a server')
   // const events = [
   //   {image: '/images/event1.png', title: 'Event 1'},
